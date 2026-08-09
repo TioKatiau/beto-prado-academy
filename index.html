@@ -51,16 +51,36 @@
             <small>ACADEMY</small>
         </div>
 
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+    </button>
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#sobre">Academia</a>
+
+        <a href="#estrutura">Estrutura</a>
+
+        <a href="#diferenciais">Diferenciais</a>
+
+        <a href="#horarios">Horários</a>
+
+        <a href="#planos">Planos</a>
+
+        <a href="#galeria">Galeria</a>
+
+        <a href="#contato">Contato</a>
+
     </nav>
 
 
     <a href="#contato" class="header-button">
         QUERO TREINAR
     </a>
-
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-    </button>
 
 </header>
 
@@ -1159,6 +1179,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
+    try {
     const swiper = new Swiper('.gallery-swiper', {
         slidesPerView: 1.05,
         spaceBetween: 16,
@@ -1184,8 +1205,12 @@
             }
         }
     });
+    } catch (e) {
+        console.warn('Swiper gallery init failed:', e);
+    }
 
         // Swiper para a seção "Diferenciais"
+        try {
         const benefitsSwiper = new Swiper('.benefits-swiper', {
             slidesPerView: 1.05,
             spaceBetween: 14,
@@ -1211,6 +1236,9 @@
                 }
             }
         });
+        } catch (e) {
+            console.warn('Swiper benefits init failed:', e);
+        }
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav');
@@ -1237,7 +1265,21 @@
         }
 
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => setMenuOpen(false));
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href') || '';
+                setMenuOpen(false);
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        // small timeout to allow menu close animation start
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            // update hash without jumping
+                            history.replaceState(null, '', href);
+                        }, 160);
+                    }
+                }
+            });
         });
     }
 </script>
