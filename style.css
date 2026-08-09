@@ -154,6 +154,8 @@ nav a {
     font-size: 13px;
     font-weight: bold;
 
+    white-space: nowrap;
+
     position: relative;
 
     transition: 0.3s;
@@ -1450,6 +1452,7 @@ section {
     display: block;
     padding-bottom: 40px;
     width: 100%;
+    overflow: hidden;
 }
 
 .swiper-wrapper {
@@ -2147,7 +2150,7 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 48px;
+        font-size: 46px;
     }
 
     .hero-content p {
@@ -2176,6 +2179,14 @@ footer {
         gap: 12px;
     }
 
+    .contact-buttons .button {
+        min-width: 100%;
+    }
+
+    .testimonial {
+        padding: 26px;
+    }
+
     footer {
         padding: 35px 4%;
     }
@@ -2190,52 +2201,66 @@ footer {
 @media (max-width: 550px) {
 
     section {
-        padding: 60px 4.5%;
+        padding: 55px 4%;
     }
 
 
     /* HEADER */
 
     header {
-        height: 75px;
+        height: auto;
+        padding: 16px 4%;
+        align-items: center;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .logo img {
-        width: 48px;
-        height: 48px;
+        width: 42px;
+        height: 42px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 8px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 6px 0;
     }
 
 
     /* HERO */
 
     #inicio {
-        min-height: 650px;
-
-        padding: 80px 6%;
+        min-height: 520px;
+        padding: 60px 4%;
     }
 
     .hero-content h1 {
-        font-size: 58px;
-
-        letter-spacing: -2px;
+        font-size: 42px;
+        letter-spacing: -1px;
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .hero-buttons {
         flex-direction: column;
+        gap: 10px;
     }
 
     .button {
         width: 100%;
-
         text-align: center;
+        padding: 14px 18px;
     }
 
 
