@@ -27,6 +27,7 @@
     <title>Beto Prado Academy</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
 </head>
 
@@ -859,63 +860,24 @@
     </div>
 
 
-    <div class="gallery">
-
-
-        <div
-            class="gallery-item gallery-main"
-            style="--gallery-bg: url('imagens/foto1.jpg');"
-        >
-
-            <img
-                src="imagens/foto1.jpg"
-                alt="Beto Prado Academy"
-            >
-
+    <div class="gallery swiper gallery-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide gallery-item" style="--gallery-bg: url('imagens/foto1.jpg');">
+                <img src="imagens/foto1.jpg" alt="Beto Prado Academy">
+            </div>
+            <div class="swiper-slide gallery-item" style="--gallery-bg: url('imagens/foto2.jpg');">
+                <img src="imagens/foto2.jpg" alt="Beto Prado Academy">
+            </div>
+            <div class="swiper-slide gallery-item" style="--gallery-bg: url('imagens/foto3.jpg');">
+                <img src="imagens/foto3.jpg" alt="Beto Prado Academy">
+            </div>
+            <div class="swiper-slide gallery-item" style="--gallery-bg: url('imagens/foto4.jpg');">
+                <img src="imagens/foto4.jpg" alt="Beto Prado Academy">
+            </div>
         </div>
-
-
-
-        <div
-            class="gallery-item"
-            style="--gallery-bg: url('imagens/foto2.jpg');"
-        >
-
-            <img
-                src="imagens/foto2.jpg"
-                alt="Beto Prado Academy"
-            >
-
-        </div>
-
-
-
-        <div
-            class="gallery-item"
-            style="--gallery-bg: url('imagens/foto3.jpg');"
-        >
-
-            <img
-                src="imagens/foto3.jpg"
-                alt="Beto Prado Academy"
-            >
-
-        </div>
-
-
-
-        <div
-            class="gallery-item"
-            style="--gallery-bg: url('imagens/foto4.jpg');"
-        >
-
-            <img
-                src="imagens/foto4.jpg"
-                alt="Beto Prado Academy"
-            >
-
-        </div>
-
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
 
 
@@ -1214,6 +1176,34 @@
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.gallery-swiper', {
+        slidesPerView: 1.05,
+        spaceBetween: 16,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            700: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+            },
+            1100: {
+                slidesPerView: 2.3,
+                spaceBetween: 24,
+                centeredSlides: false,
+            }
+        }
+    });
+</script>
 
 </body>
 
