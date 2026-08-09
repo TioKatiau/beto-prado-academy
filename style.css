@@ -2482,5 +2482,783 @@ footer {
     .footer-logo {
         grid-column: auto;
     }
+/* =========================================================
+   CORREÇÃO RESPONSIVA DEFINITIVA
+========================================================= */
 
+/* Impede qualquer elemento de criar largura extra */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Imagens nunca passam da tela */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links e botões podem encolher */
+a,
+button {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CELULAR / TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+    header {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        flex-shrink: 0;
+    }
+
+
+    /* SEÇÕES */
+    section {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+
+    /* HERO */
+    #inicio {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 550px;
+    }
+
+
+    /* NÚMEROS */
+    .numbers {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .number-card {
+        min-width: 0;
+    }
+
+
+    /* SOBRE */
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-text {
+        min-width: 0;
+    }
+
+    .about-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* IMPACTO */
+    .impact {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+
+    /* ESTRUTURA */
+    .structure-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .structure-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* MODALIDADES */
+    .modalities {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .modality {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* HORÁRIOS */
+    .schedule {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .schedule-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .schedule-number {
+        flex-shrink: 0;
+    }
+
+    .schedule-info {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .schedule-info strong {
+        white-space: nowrap;
+    }
+
+
+    /* LOCALIZAÇÃO */
+    .location {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .location div:last-child {
+        min-width: 0;
+    }
+
+    .location strong,
+    .location small {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* DIFERENCIAIS */
+    .benefits {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .benefit-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* PLANOS */
+    .plans {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .plan {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* DEPOIMENTOS */
+    .testimonials {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .testimonial {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* GALERIA */
+    .gallery {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .gallery.swiper {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .gallery-item {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* INSTAGRAM */
+    #instagram {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .instagram-content {
+        width: 100%;
+        max-width: 700px;
+        min-width: 0;
+    }
+
+    .instagram-content h2 {
+        overflow-wrap: break-word;
+    }
+
+
+    /* FAQ */
+    .faq-list {
+        width: 100%;
+        max-width: 850px;
+        min-width: 0;
+    }
+
+    .faq-list details {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .faq-list summary {
+        min-width: 0;
+        gap: 15px;
+    }
+
+    .faq-list summary {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* CONTATO */
+    #contato {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 920px;
+        min-width: 0;
+    }
+
+    .contact-card p {
+        overflow-wrap: anywhere;
+    }
+
+    .contact-buttons {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-buttons .button {
+        max-width: 100%;
+    }
+
+
+    /* FOOTER */
+    footer {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-info {
+        min-width: 0;
+    }
+
+    .footer-links a,
+    .footer-social a {
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 550px) {
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+
+    /* TODAS AS SEÇÕES */
+    section {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    /* HEADER */
+    header {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    nav {
+        margin: 0;
+        padding: 8px 0 10px;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* HERO */
+    #inicio {
+        min-height: 540px;
+        padding: 65px 5%;
+    }
+
+    .hero-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(38px, 12vw, 52px);
+
+        line-height: 0.92;
+
+        letter-spacing: -1px;
+
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* TÍTULOS */
+    .section-title {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .section-title h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(32px, 9vw, 48px);
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* NÚMEROS */
+    .numbers {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .number-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* SOBRE */
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-box div {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* IMPACTO */
+    .impact {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /* ESTRUTURA */
+    .structure-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .structure-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .structure-content {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .structure-content h3 {
+        font-size: 24px;
+    }
+
+
+    /* MODALIDADES */
+    .modalities {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .modality {
+        width: 100%;
+        min-width: 0;
+        padding: 25px;
+    }
+
+
+    /* HORÁRIOS */
+    .schedule {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .schedule-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .schedule-number {
+        width: 55px;
+        padding-left: 12px;
+        font-size: 30px;
+    }
+
+    .schedule-info {
+        padding: 22px 15px;
+        min-width: 0;
+    }
+
+    .schedule-info h3 {
+        font-size: 9px;
+        letter-spacing: 1px;
+        white-space: normal;
+    }
+
+    .schedule-info strong {
+        font-size: 22px;
+        white-space: normal;
+    }
+
+    .schedule-info p {
+        font-size: 12px;
+    }
+
+
+    /* LOCALIZAÇÃO */
+    .location {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .location-icon {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .location strong {
+        font-size: 15px;
+    }
+
+
+    /* DIFERENCIAIS */
+    .benefits {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .benefit-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* PLANOS */
+    .plans {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .plan {
+        width: 100%;
+        min-width: 0;
+        padding: 28px 22px;
+    }
+
+    .price {
+        font-size: 48px;
+    }
+
+
+    /* DEPOIMENTOS */
+    .testimonials {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .testimonial {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* GALERIA */
+    .gallery {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .gallery.swiper {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .gallery-item {
+        width: 100%;
+        max-width: 100%;
+        min-height: 280px;
+        height: 280px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    /* INSTAGRAM */
+    #instagram {
+        width: 100%;
+        padding: 70px 5%;
+    }
+
+    .instagram-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .instagram-content h2 {
+        font-size: clamp(34px, 10vw, 45px);
+    }
+
+    .instagram-content p {
+        font-size: 14px;
+    }
+
+
+    /* FAQ */
+    .faq-list {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .faq-list summary {
+        min-height: 65px;
+        padding: 17px;
+        font-size: 13px;
+    }
+
+    .faq-list details p {
+        padding: 0 17px 20px;
+        font-size: 13px;
+    }
+
+
+    /* CONTATO */
+    #contato {
+        padding: 80px 5% 60px;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .contact-card p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .contact-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-buttons .button {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* WHATSAPP */
+    .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+
+    /* FOOTER */
+    footer {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+        text-align: center;
+    }
+
+    .footer-logo {
+        grid-column: auto;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-info {
+        width: 100%;
+    }
+}
 }
