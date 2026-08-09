@@ -1256,9 +1256,19 @@
     }
 
     if (menuToggle && navMenu) {
+        // primary toggle (keeps existing behavior)
         menuToggle.addEventListener('click', () => {
             setMenuOpen(!navMenu.classList.contains('open'));
         });
+
+        // safe document-level capture in case button is overlaid
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest && e.target.closest('.menu-toggle');
+            if (btn) {
+                e.preventDefault();
+                setMenuOpen(!navMenu.classList.contains('open'));
+            }
+        }, { capture: true });
 
         if (menuOverlay) {
             menuOverlay.addEventListener('click', () => setMenuOpen(false));
@@ -1280,6 +1290,13 @@
                     }
                 }
             });
+        });
+
+        // close by Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+                setMenuOpen(false);
+            }
         });
     }
 </script>
