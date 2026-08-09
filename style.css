@@ -144,19 +144,26 @@ header {
 nav {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .menu-toggle {
-    display: none;
+    display: inline-flex;
     border: 0;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
     padding: 0;
     margin-left: 18px;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    border-radius: 14px;
+    transition: background 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .menu-toggle span {
@@ -2095,16 +2102,18 @@ footer {
 
     nav {
         position: fixed;
-        inset: 0;
+        left: 0;
         top: 90px;
+        bottom: 0;
+        width: 260px;
         background: rgba(8, 8, 8, 0.98);
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         gap: 24px;
-        padding: 24px 20px 30px;
+        padding: 24px 18px 30px;
         overflow-y: auto;
-        transform: translateY(-100%);
+        transform: translateX(-110%);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -2113,7 +2122,7 @@ footer {
     }
 
     nav.open {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -2122,7 +2131,7 @@ footer {
     nav a {
         font-size: 18px;
         width: 100%;
-        text-align: center;
+        text-align: left;
         padding: 12px 0;
     }
 
@@ -2616,26 +2625,49 @@ button {
         flex-shrink: 0;
     }
 
-    nav {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-
-        -webkit-overflow-scrolling: touch;
-
-        scrollbar-width: none;
+    .menu-toggle {
+        display: inline-flex;
     }
 
-    nav::-webkit-scrollbar {
-        display: none;
+    nav {
+        position: fixed;
+        left: 0;
+        top: 90px;
+        bottom: 0;
+        width: 260px;
+        max-width: 260px;
+        background: rgba(8, 8, 8, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+        padding: 24px 18px 30px;
+        overflow-y: auto;
+        transform: translateX(-110%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        z-index: 1001;
+    }
+
+    nav.open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     nav a {
         flex-shrink: 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+        padding: 12px 0;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
     }
 
 
