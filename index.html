@@ -1247,10 +1247,43 @@
     function setMenuOpen(isOpen) {
         navMenu.classList.toggle('open', isOpen);
         menuToggle.classList.toggle('open', isOpen);
+
+        // Fallback: aplicar estilos inline para garantir visibilidade
+        if (isOpen) {
+            try {
+                navMenu.style.transform = 'translateX(0)';
+                navMenu.style.opacity = '1';
+                navMenu.style.visibility = 'visible';
+                navMenu.style.pointerEvents = 'auto';
+            } catch (e) {
+                // ignore
+            }
+        } else {
+            try {
+                navMenu.style.transform = 'translateX(-110%)';
+                navMenu.style.opacity = '0';
+                navMenu.style.visibility = 'hidden';
+                navMenu.style.pointerEvents = 'none';
+            } catch (e) {
+                // ignore
+            }
+        }
+
         if (menuOverlay) {
             menuOverlay.classList.toggle('open', isOpen);
             menuOverlay.setAttribute('aria-hidden', String(!isOpen));
+            // inline style fallback
+            if (isOpen) {
+                menuOverlay.style.opacity = '1';
+                menuOverlay.style.visibility = 'visible';
+                menuOverlay.style.pointerEvents = 'auto';
+            } else {
+                menuOverlay.style.opacity = '0';
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.pointerEvents = 'none';
+            }
         }
+
         menuToggle.setAttribute('aria-expanded', String(isOpen));
         menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
     }
