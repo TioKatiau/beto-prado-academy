@@ -148,7 +148,7 @@ nav {
 }
 
 .menu-toggle {
-    display: inline-flex;
+    display: none;
     border: 0;
     background: rgba(255, 255, 255, 0.08);
     padding: 0;
@@ -2091,13 +2091,16 @@ footer {
         padding: 0 4%;
         min-height: 90px;
         height: auto;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
         gap: 14px;
+        backdrop-filter: none;
+        overflow: visible;
     }
 
     .menu-toggle {
         display: inline-flex;
+        flex-shrink: 0;
     }
 
     nav {
@@ -2106,6 +2109,7 @@ footer {
         top: 90px;
         bottom: 0;
         width: 260px;
+        max-width: 85vw;
         background: rgba(8, 8, 8, 0.98);
         flex-direction: column;
         align-items: flex-start;
@@ -2113,12 +2117,14 @@ footer {
         gap: 24px;
         padding: 24px 18px 30px;
         overflow-y: auto;
+        overflow-x: hidden;
         transform: translateX(-110%);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
         z-index: 1001;
+        border-right: 1px solid #292929;
     }
 
     nav.open {
@@ -2315,20 +2321,6 @@ footer {
         width: 42px;
         height: 42px;
     }
-
-    nav {
-        width: 100%;
-        gap: 8px;
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px;
-    }
-
-    nav a {
-        font-size: 11px;
-        padding: 6px 0;
-    }
-
 
     /* HERO */
 
@@ -2576,6 +2568,7 @@ footer {
     .footer-logo {
         grid-column: auto;
     }
+}
 /* =========================================================
    CORREÇÃO RESPONSIVA DEFINITIVA
 ========================================================= */
@@ -2618,7 +2611,8 @@ button {
     header {
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        backdrop-filter: none;
     }
 
     .logo {
@@ -3010,15 +3004,6 @@ button {
         min-width: 0;
     }
 
-    nav {
-        margin: 0;
-        padding: 8px 0 10px;
-
-        width: 100%;
-        min-width: 0;
-    }
-
-
     /* HERO */
     #inicio {
         min-height: 540px;
@@ -3378,4 +3363,59 @@ button {
         width: 100%;
     }
 }
+
+
+
+/* =========================
+   MENU MOBILE — OVERLAY
+========================= */
+
+.menu-overlay {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .menu-overlay.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    nav.open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 1002;
+    }
+
+    .menu-toggle {
+        z-index: 1003;
+        position: relative;
+    }
+
+    .menu-toggle.open span {
+        background: transparent;
+    }
+
+    .menu-toggle.open span::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.open span::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
