@@ -89,7 +89,7 @@ header {
 
     z-index: 1000;
 
-    backdrop-filter: blur(10px);
+    background: #050505;
 }
 
 
@@ -148,11 +148,11 @@ nav {
 }
 
 .menu-toggle {
-    display: none;
+    display: inline-flex;
     border: 0;
     background: rgba(255, 255, 255, 0.08);
     padding: 0;
-    margin-left: 18px;
+    margin-left: auto;
     width: 44px;
     height: 44px;
     cursor: pointer;
@@ -160,6 +160,8 @@ nav {
     justify-content: center;
     border-radius: 14px;
     transition: background 0.25s ease;
+    flex-shrink: 0;
+    order: 10;
 }
 
 .menu-toggle:hover {
@@ -3417,5 +3419,48 @@ button {
 
     .menu-toggle.open span::after {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* =========================
+   SWIPER - DIFERENCIAIS
+========================= */
+
+.benefits-swiper {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding-bottom: 8px;
+}
+
+.benefits-swiper .swiper-wrapper {
+    display: flex;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.benefits-swiper .swiper-slide {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Desktop: force grid-like layout using CSS grid on wrapper */
+@media (min-width: 1101px) {
+    .benefits-swiper .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    .benefits-swiper .swiper-slide {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .benefits-swiper .benefit-card {
+        border-radius: 14px;
+        padding: 22px;
     }
 }

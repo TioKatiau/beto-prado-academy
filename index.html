@@ -51,36 +51,16 @@
             <small>ACADEMY</small>
         </div>
 
-    </a>
-
-    <button class="menu-toggle" type="button" aria-label="Abrir menu">
-        <span></span>
-    </button>
-
-    <nav>
-
-        <a href="#inicio">Início</a>
-
-        <a href="#sobre">Academia</a>
-
-        <a href="#estrutura">Estrutura</a>
-
-        <a href="#diferenciais">Diferenciais</a>
-
-        <a href="#horarios">Horários</a>
-
-        <a href="#planos">Planos</a>
-
-        <a href="#galeria">Galeria</a>
-
-        <a href="#contato">Contato</a>
-
     </nav>
 
 
     <a href="#contato" class="header-button">
         QUERO TREINAR
     </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+    </button>
 
 </header>
 
@@ -489,50 +469,46 @@
     </div>
 
 
-    <div class="benefits">
+    <div class="benefits swiper benefits-swiper">
+        <div class="swiper-wrapper">
 
-        <div class="benefit-card">
+            <div class="swiper-slide">
+                <div class="benefit-card">
+                    <span class="benefit-icon">⏰</span>
+                    <h3>Treino 24h</h3>
+                    <p>Horários amplos para encaixar sua rotina sem pressa.</p>
+                </div>
+            </div>
 
-            <span class="benefit-icon">⏰</span>
+            <div class="swiper-slide">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏋️</span>
+                    <h3>Equipamentos modernos</h3>
+                    <p>Máquinas e acessórios atualizados para qualquer objetivo.</p>
+                </div>
+            </div>
 
-            <h3>Treino 24h</h3>
+            <div class="swiper-slide">
+                <div class="benefit-card">
+                    <span class="benefit-icon">👥</span>
+                    <h3>Acompanhamento</h3>
+                    <p>Equipe disponível para orientar treinos e evolução.</p>
+                </div>
+            </div>
 
-            <p>Horários amplos para encaixar sua rotina sem pressa.</p>
-
-        </div>
-
-
-        <div class="benefit-card">
-
-            <span class="benefit-icon">🏋️</span>
-
-            <h3>Equipamentos modernos</h3>
-
-            <p>Máquinas e acessórios atualizados para qualquer objetivo.</p>
-
-        </div>
-
-
-        <div class="benefit-card">
-
-            <span class="benefit-icon">👥</span>
-
-            <h3>Acompanhamento</h3>
-
-            <p>Equipe disponível para orientar treinos e evolução.</p>
-
-        </div>
-
-
-        <div class="benefit-card">
-
-            <span class="benefit-icon">💪</span>
-
-            <h3>Ambiente motivador</h3>
-
-            <p>Espaço seguro e focado para você treinar com confiança.</p>
+            <div class="swiper-slide">
+                <div class="benefit-card">
+                    <span class="benefit-icon">💪</span>
+                    <h3>Ambiente motivador</h3>
+                    <p>Espaço seguro e focado para você treinar com confiança.</p>
+                </div>
+            </div>
 
         </div>
+
+        <div class="swiper-pagination benefits-pagination"></div>
+        <div class="swiper-button-prev benefits-prev"></div>
+        <div class="swiper-button-next benefits-next"></div>
 
     </div>
 
@@ -1208,6 +1184,33 @@
             }
         }
     });
+
+        // Swiper para a seção "Diferenciais"
+        const benefitsSwiper = new Swiper('.benefits-swiper', {
+            slidesPerView: 1.05,
+            spaceBetween: 14,
+            loop: true,
+            pagination: {
+                el: '.benefits-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.benefits-next',
+                prevEl: '.benefits-prev',
+            },
+            breakpoints: {
+                700: {
+                    slidesPerView: 2.1,
+                    spaceBetween: 18,
+                },
+                1100: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                    loop: false,
+                    centeredSlides: false,
+                }
+            }
+        });
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav');
